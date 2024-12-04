@@ -1,56 +1,14 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/electron/index.js":
-/*!****************************************!*\
-  !*** ./node_modules/electron/index.js ***!
-  \****************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-const fs = __webpack_require__(/*! fs */ "fs");
-const path = __webpack_require__(/*! path */ "path");
-
-const pathFile = path.join(__dirname, 'path.txt');
-
-function getElectronPath () {
-  let executablePath;
-  if (fs.existsSync(pathFile)) {
-    executablePath = fs.readFileSync(pathFile, 'utf-8');
-  }
-  if (process.env.ELECTRON_OVERRIDE_DIST_PATH) {
-    return path.join(process.env.ELECTRON_OVERRIDE_DIST_PATH, executablePath || 'electron');
-  }
-  if (executablePath) {
-    return path.join(__dirname, 'dist', executablePath);
-  } else {
-    throw new Error('Electron failed to install correctly, please delete node_modules/electron and try installing again');
-  }
-}
-
-module.exports = getElectronPath();
-
-
-/***/ }),
-
-/***/ "fs":
-/*!*********************!*\
-  !*** external "fs" ***!
-  \*********************/
+/***/ "electron":
+/*!***************************!*\
+  !*** external "electron" ***!
+  \***************************/
 /***/ ((module) => {
 
-"use strict";
-module.exports = require("fs");
-
-/***/ }),
-
-/***/ "path":
-/*!***********************!*\
-  !*** external "path" ***!
-  \***********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("path");
+module.exports = require("electron");
 
 /***/ })
 
@@ -123,14 +81,13 @@ module.exports = require("path");
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!*********************!*\
   !*** ./src/main.ts ***!
   \*********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! electron */ "./node_modules/electron/index.js");
+/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! electron */ "electron");
 /* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(electron__WEBPACK_IMPORTED_MODULE_0__);
 
 const createWindow = () => {
@@ -138,7 +95,7 @@ const createWindow = () => {
         width: 800,
         height: 600,
     });
-    win.loadFile("dist/index.html");
+    win.loadFile("index.html");
 };
 electron__WEBPACK_IMPORTED_MODULE_0__.app.whenReady().then(() => {
     createWindow();
