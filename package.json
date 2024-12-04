@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack && electron ./dist"
+    "start": "npm run cp-info && webpack && electron ./dist",
+    "cp-info": "node -e \"require('fs').cpSync('./info', './dist', { recursive: true })\""
   },
   "keywords": [],
   "author": "",
