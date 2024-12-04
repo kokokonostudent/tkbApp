@@ -60,7 +60,6 @@ const mainConfig = {
 };
 
 /** @type WebpackConfig */
-/*
 const appConfig = {
     name: "app",
     target: "web",
@@ -105,6 +104,5 @@ const appConfig = {
         poll: 5000,
     },
 };
-*/
 
-module.exports = [mainConfig, /*appConfig*/];
+module.exports = [mainConfig, appConfig];

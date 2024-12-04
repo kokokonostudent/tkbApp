@@ -138,7 +138,7 @@ const createWindow = () => {
         width: 800,
         height: 600,
     });
-    win.loadFile("index.html");
+    win.loadFile("dist/index.html");
 };
 electron__WEBPACK_IMPORTED_MODULE_0__.app.whenReady().then(() => {
     createWindow();
