@@ -1,15 +1,22 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "esModuleInterop": true,
-    "moduleResolution": "Node",
-    "jsx": "react-jsx",
-    "strict": true
-  },
-  "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+        "target": "ESNext",
+        "module": "ESNext",
+        "sourceMap": true,
+        "rootDir": "src",
+        "strict": true,
+        "jsx": "react",
+        "baseUrl": "./",
+        "esModuleInterop": true,
+        "moduleResolution": "Node",
+        "jsx": "react-jsx",
+        "strict": true,
+        "paths": {
+        }
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
     }
-  }
 }
