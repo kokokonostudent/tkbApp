@@ -1,5 +1,7 @@
 import { app, BrowserWindow } from "electron";
 
+//import { Poster } from "@/types/Poster";
+
 const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,

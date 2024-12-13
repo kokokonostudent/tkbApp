@@ -27,12 +27,7 @@ const mainConfig = {
     },
     resolve: {
         alias: {
-            //"@CommonTypes": path.resolve(__dirname, "./src/common/types"),
-            //"@CommonUtils": path.resolve(__dirname, "./src/common/utils"),
-            //"@Extension": path.resolve(__dirname, "./src/extension"),
-            //"@ExtensionTypes": path.resolve(__dirname, "./src/extension/types"),
-            //"@ExtensionUtils": path.resolve(__dirname, "./src/extension/utils"),
-            //"@Parser": path.resolve(__dirname, "./src/extension/parser"),
+            "@": path.resolve(__dirname, "./"),
         },
         // support reading TypeScript and JavaScript files, 📖 -> https://github.com/TypeStrong/ts-loader
         extensions: [".js", ".ts", ".json"],
@@ -73,13 +68,7 @@ const appConfig = {
     },
     resolve: {
         alias: {
-            //"@AppComponents": path.resolve(__dirname, "./src/app/components"),
-            //"@AppHooks": path.resolve(__dirname, "./src/app/hooks"),
-            //"@AppObjects": path.resolve(__dirname, "./src/app/objects"),
-            //"@AppTypes": path.resolve(__dirname, "./src/app/types"),
-            //"@AppUtils": path.resolve(__dirname, "./src/app/utils"),
-            //"@CommonTypes": path.resolve(__dirname, "./src/common/types"),
-            //"@CommonUtils": path.resolve(__dirname, "./src/common/utils"),
+            "@": path.resolve(__dirname, "./"),
         },
         extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
     },

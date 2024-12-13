@@ -1,5 +1,7 @@
 import React, { createRoot } from "react-dom/client";
 
+//import { Poster } from "@/types/Poster";
+
 function App() {
     return <h1>hello from REACT</h1>;
 }

@@ -3,7 +3,7 @@
         "target": "ESNext",
         "module": "ESNext",
         "sourceMap": true,
-        "rootDir": "src",
+        "rootDir": ".",
         "strict": true,
         "jsx": "react",
         "baseUrl": "./",
@@ -12,6 +12,7 @@
         "jsx": "react-jsx",
         "strict": true,
         "paths": {
+            "@/*": ["./*"]
         }
     },
     "ts-node": {
