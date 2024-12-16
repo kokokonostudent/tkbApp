@@ -1,9 +1,15 @@
 import React, { createRoot } from "react-dom/client";
 
-//import { Poster } from "@/types/Poster";
+import { useIpcRenderer } from "@/hooks/useIpcRenderer";
 
 function App() {
-    return <h1>hello from REACT</h1>;
+    const posters = useIpcRenderer();
+
+    return (
+        <>
+            {posters?.map((p) => <p>{p.title}</p>)}
+        </>
+    );
 }
 
 const rootElem = document.getElementById("root");

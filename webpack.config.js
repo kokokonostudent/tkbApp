@@ -10,7 +10,7 @@ const path = require("path");
 /** @type WebpackConfig */
 const mainConfig = {
     name: "main",
-    target: "electron-renderer",
+    target: "electron-main",
     mode: "development", // this leaves the source code as close as possible to the original (when packaging we set this to 'production')
     entry: {
         main: "./src/main.ts",
@@ -22,8 +22,6 @@ const mainConfig = {
         libraryTarget: "commonjs2",
     },
     externals: {
-        vscode: "commonjs vscode", // the vscode-module is created on-the-fly and must be excluded. Add other modules that cannot be webpack'ed, 📖 -> https://webpack.js.org/configuration/externals/
-        // modules added here also need to be added in the .vscodeignore file
     },
     resolve: {
         alias: {
@@ -55,9 +53,50 @@ const mainConfig = {
 };
 
 /** @type WebpackConfig */
+const preloadConfig = {
+    name: "preload",
+    target: "electron-preload",
+    mode: "development",
+    entry: {
+        preload: "./src/preload.ts",
+    },
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        filename: "[name].js",
+        libraryTarget: "commonjs2",
+    },
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "./"),
+        },
+        extensions: [".js", ".ts", ".json"],
+    },
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                exclude: /(node_modules | test)/,
+                use: [
+                    {
+                        loader: "ts-loader",
+                    },
+                ],
+            },
+        ],
+    },
+    devtool: "nosources-source-map",
+    infrastructureLogging: {
+        level: "log", // enables logging required for problem matchers
+    },
+    watchOptions: {
+        poll: 5000,
+    },
+};
+
+/** @type WebpackConfig */
 const appConfig = {
     name: "app",
-    target: "web",
+    target: ["web", "electron-renderer"],
     mode: "development",
     entry: {
         app: "./src-app/App.tsx",
@@ -94,4 +133,4 @@ const appConfig = {
     },
 };
 
-module.exports = [mainConfig, appConfig];
+module.exports = [mainConfig, preloadConfig, appConfig];
