@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 
 export function loadDotEnv() {
 
-dotenv.config();
+    dotenv.config();
 
-console.log(process.env.TEST_KEY); // HelloWorld
+    //console.log(process.env.TEST_KEY); // HelloWorld
 
 }
