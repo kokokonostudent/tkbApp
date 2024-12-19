@@ -13,7 +13,8 @@
         "strict": true,
         "paths": {
             "@/*": ["./*"]
-        }
+        },
+        "typeRoots": ["./node_modules/@types", "./types"]
     },
     "ts-node": {
         "compilerOptions": {
