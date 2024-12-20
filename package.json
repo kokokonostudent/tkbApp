@@ -1,36 +1,36 @@
 {
-  "name": "tkbapp",
-  "version": "0.0.1",
-  "main": "dist/main.js",
-  "scripts": {
-    "start": "npm run cp-info && webpack && electron ./dist",
-    "cp-info": "node -e \"require('fs').cpSync('./info', './dist', { recursive: true })\"",
-    "format": "prettier --write ."
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@types/jest": "^29.5.14",
-    "@types/node": "^22.8.4",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "electron": "^33.0.2",
-    "prettier": "^3.4.2",
-    "ts-jest": "^29.2.5",
-    "ts-loader": "^9.5.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.2",
-    "webpack": "^5.97.0",
-    "webpack-cli": "^5.1.4"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.13.5",
-    "dotenv": "^16.4.7",
-    "google-auth-library": "^9.15.0",
-    "google-spreadsheet": "^4.1.4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  }
+    "name": "tkbapp",
+    "version": "0.0.1",
+    "main": "dist/main.js",
+    "scripts": {
+        "start": "npm run cp-info && webpack && electron ./dist",
+        "cp-info": "node -e \"require('fs').cpSync('./info', './dist', { recursive: true })\"",
+        "format": "prettier --write ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@types/jest": "^29.5.14",
+        "@types/node": "^22.8.4",
+        "@types/react": "^18.3.12",
+        "@types/react-dom": "^18.3.1",
+        "electron": "^33.0.2",
+        "prettier": "^3.4.2",
+        "ts-jest": "^29.2.5",
+        "ts-loader": "^9.5.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.7.2",
+        "webpack": "^5.97.0",
+        "webpack-cli": "^5.1.4"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.13.5",
+        "dotenv": "^16.4.7",
+        "google-auth-library": "^9.15.0",
+        "google-spreadsheet": "^4.1.4",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    }
 }

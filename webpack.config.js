@@ -21,8 +21,7 @@ const mainConfig = {
         filename: "[name].js",
         libraryTarget: "commonjs2",
     },
-    externals: {
-    },
+    externals: {},
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "./"),

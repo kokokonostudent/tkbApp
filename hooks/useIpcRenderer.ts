@@ -4,8 +4,8 @@ import { Poster } from "@/types/Poster";
 interface ElectronWindow extends Window {
     commands: {
         getPosters: () => Promise<Array<Poster>>;
-    }
-};
+    };
+}
 
 declare const window: ElectronWindow;
 

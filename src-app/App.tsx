@@ -5,11 +5,7 @@ import { useIpcRenderer } from "@/hooks/useIpcRenderer";
 function App() {
     const posters = useIpcRenderer();
 
-    return (
-        <>
-            {posters?.map((p) => <p>{p.title}</p>)}
-        </>
-    );
+    return <>{posters?.map((p) => <p>{p.title}</p>)}</>;
 }
 
 const rootElem = document.getElementById("root");
