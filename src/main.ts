@@ -53,7 +53,7 @@ ipcMain.handle("get_posters", async () => {
     await doc.loadInfo();
 
     // データ整形
-    const posters = docToPosters(doc);
+    const posters = await docToPosters(doc);
 
     return posters;
 });
