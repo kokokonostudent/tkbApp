@@ -5,7 +5,7 @@ import { Poster } from "@/types/Poster";
 // GoogleSpreadsheetから情報を抜き出しArray<Poster>の形で返す
 export async function docToPosters(doc: GoogleSpreadsheet): Promise<Array<Poster>> {
     const sheetName = "left"; // 使うシート名の指定
-    const headers = ["title", "Text", "user", "timestamp"]; // シートのヘッダー名の指定
+    const headers = ["title", "message", "author", "createAt"]; // シートのヘッダー名の指定
 
     const sheet = doc.sheetsByTitle[sheetName];
     const rows = await sheet.getRows();
